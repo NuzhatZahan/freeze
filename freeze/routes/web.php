@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FlavourController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,11 @@ Route::post('/save_category',[CategoryController::class, 'store_category']);
 Route::get('/active_category/{id}',[CategoryController::class, 'active_category']);
 Route::get('/inactive_category/{id}',[CategoryController::class, 'inactive_category']);
 Route::get('/delete_category/{id}',[CategoryController::class, 'delete_category']);
+
+/* Flavour */
+Route::get('/flavour',[FlavourController::class, 'index']);
+Route::get('/add_flavour',[FlavourController::class, 'add_flavour']);
+Route::post('/save_flavour',[FlavourController::class, 'store_flavour']);
+Route::get('/active_flavour/{id}',[FlavourController::class, 'active_flavour']);
+Route::get('/inactive_flavour/{id}',[FlavourController::class, 'inactive_flavour']);
+Route::get('/delete_flavour/{id}',[FlavourController::class, 'delete_flavour']);
