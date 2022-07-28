@@ -5,6 +5,9 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FlavourController;
+use App\Http\Controllers\ToppingController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +25,16 @@ use App\Http\Controllers\FlavourController;
 });*/
 /**********           frontend            *********/
 Route::get('/',[IndexController::class, 'index']);
+
+
+
+
+
+
+
+
+
+
 
 
 /**********           Backend            *********/
@@ -46,3 +59,11 @@ Route::post('/save_flavour',[FlavourController::class, 'store_flavour']);
 Route::get('/active_flavour/{id}',[FlavourController::class, 'active_flavour']);
 Route::get('/inactive_flavour/{id}',[FlavourController::class, 'inactive_flavour']);
 Route::get('/delete_flavour/{id}',[FlavourController::class, 'delete_flavour']);
+
+/* Toppings */
+Route::get('/topping',[ToppingController::class, 'index']);
+Route::get('/add_topping',[ToppingController::class, 'add_topping']);
+Route::post('/save_topping',[ToppingController::class, 'store_topping']);
+Route::get('/active_topping/{id}',[ToppingController::class, 'active_topping']);
+Route::get('/inactive_topping/{id}',[ToppingController::class, 'inactive_topping']);
+Route::get('/delete_topping/{id}',[ToppingController::class, 'delete_topping']);
